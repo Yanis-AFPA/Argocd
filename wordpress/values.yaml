@@ -6,7 +6,10 @@ storage:
   className: nfs-static
   size: 8Gi
   accessMode: ReadWriteMany
-
+nfs:
+  server: "192.168.56.30"
+  path: "/srv/nfs/wp2-content"
+  createPV: true
 # Ta base de données externe (192.168.56.20)
 database:
   host: "192.168.56.20:3306"

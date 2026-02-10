@@ -9,3 +9,5 @@ spec:
   resources:
     requests:
       storage: {{ .Values.storage.size }}
+  # Astuce : Si tu veux être sûr à 100% qu'il prenne CELUI créé par Helm
+  volumeName: {{ .Release.Name }}-pv

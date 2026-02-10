@@ -1,0 +1,25 @@
+{{- if .Values.nfs.createPV -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Release.Name }}-pv
+  labels:
+    type: nfs
+    app: {{ .Release.Name }}
+spec:
+  capacity:
+    storage: {{ .Values.storage.size }}
+  accessModes:
+    - {{ .Values.storage.accessMode }}
+  persistentVolumeReclaimPolicy: Retain # "Retain" garde les données si tu supprimes le chart
+  storageClassName: {{ .Values.storage.className }}
+  nfs:
+    server: {{ .Values.nfs.server }}
+    path: {{ .Values.nfs.path }}
+  mountOptions:
+    - vers=3
+    - rw
+    - hard
+    - timeo=600
+    - retrans=5
+{{- end }}
