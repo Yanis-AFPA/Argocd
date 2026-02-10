@@ -13,10 +13,10 @@ nfs:
 # Ta base de données externe (192.168.56.20)
 database:
   host: "192.168.56.20:3306"
-  name: "wordpress"
-  user: "wp_user"
+  name: "wordpress2"
+  user: "wp_user2"
   password: "P@ssw0rd34"
 
 ingress:
   enabled: true
-  host: wordpress.afpa-devops.lab
+  host: wordpress2.afpa-devops.lab

@@ -43,9 +43,9 @@ spec:
             failureThreshold: 5
             
           volumeMounts:
-            - name: wp-content
-              mountPath: /var/www/html/wp-content
+            - name: wp2-content
+              mountPath: /var/www/html/wp2-content
       volumes:
-        - name: wp-content
+        - name: wp2-content
           persistentVolumeClaim:
             claimName: {{ .Release.Name }}-pvc
