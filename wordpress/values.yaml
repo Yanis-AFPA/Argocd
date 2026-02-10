@@ -1,0 +1,19 @@
+wordpress:
+  image: wordpress:6.5-apache
+  replicaCount: 1
+
+storage:
+  className: nfs-static
+  size: 8Gi
+  accessMode: ReadWriteMany
+
+# Ta base de données externe (192.168.56.20)
+database:
+  host: "192.168.56.20:3306"
+  name: "wordpress"
+  user: "wp_user"
+  password: "P@ssw0rd34"
+
+ingress:
+  enabled: true
+  host: wordpress.afpa-devops.lab

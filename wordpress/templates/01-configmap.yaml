@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  WORDPRESS_DB_HOST: {{ .Values.database.host | quote }}
+  WORDPRESS_DB_NAME: {{ .Values.database.name | quote }}
+  WORDPRESS_DB_USER: {{ .Values.database.user | quote }}

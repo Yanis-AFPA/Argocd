@@ -1,0 +1,6 @@
+apiVersion: v2
+name: wordpress-nfs
+description: WordPress connecté à une DB externe avec stockage NFS
+type: application
+version: 0.1.0
+appVersion: "6.5"
